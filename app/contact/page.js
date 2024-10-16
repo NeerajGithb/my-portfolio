@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -101,6 +102,13 @@ const page = () => {
           </div>
         </div>
       </div>
+      <nav className="fixed bottom-0  right-0 flex justify-center p-1">
+        <Link href="/payment">
+          <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+            Suport me
+          </span>
+        </Link>
+      </nav>
     </div>
   );
 };

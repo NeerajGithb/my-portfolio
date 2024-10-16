@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
-
+import musicImg from "../image/music.png";
+import portfoloImg from "../image/portfolio.png";
+import netflixImg from "../image/netflix.png";
+import twitterImg from "../image/twitter.png";
+import todoImg from "../image/todo.png";
 const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-10 pl-[10vw]">
@@ -20,7 +24,7 @@ const Page = () => {
         {/* Project Card */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
-            src="/path-to-your-image.jpg"
+            src={musicImg}
             alt="E-commerce Platform"
             width={400}
             height={300}
@@ -28,12 +32,11 @@ const Page = () => {
           />
           <div className="p-6">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              E-commerce Platform
+              Neeraj Music Web
             </h3>
             <p className="text-gray-500 mb-4">
-              An advanced e-commerce website with features such as product
-              listing, payment gateway integration, and a user-friendly admin
-              dashboard.
+              An advanced Music website with features such as product listing,
+              payment gateway integration, and a user-friendly admin dashboard.
             </p>
             <a
               href="#"
@@ -46,7 +49,7 @@ const Page = () => {
         {/* Repeat for other project cards */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
-            src="/path-to-your-image.jpg"
+            src={portfoloImg}
             alt="Portfolio Website"
             width={400}
             height={300}
@@ -70,7 +73,7 @@ const Page = () => {
 
         <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
-            src="/path-to-your-image.jpg"
+            src={netflixImg}
             alt="Portfolio Website"
             width={400}
             height={300}
@@ -78,7 +81,7 @@ const Page = () => {
           />
           <div className="p-6">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Portfolio Website
+              Netflix Clone
             </h3>
             <p className="text-gray-500 mb-4">
               A premium and responsive portfolio website to showcase my skills,
@@ -93,7 +96,7 @@ const Page = () => {
         </div>
         <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
-            src="/path-to-your-image.jpg"
+            src={twitterImg}
             alt="Portfolio Website"
             width={400}
             height={300}
@@ -101,7 +104,7 @@ const Page = () => {
           />
           <div className="p-6">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Portfolio Website
+              Twitter Clone
             </h3>
             <p className="text-gray-500 mb-4">
               A premium and responsive portfolio website to showcase my skills,
@@ -116,7 +119,7 @@ const Page = () => {
         </div>
         <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
-            src="/path-to-your-image.jpg"
+            src={todoImg}
             alt="Portfolio Website"
             width={400}
             height={300}
@@ -124,7 +127,7 @@ const Page = () => {
           />
           <div className="p-6">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Portfolio Website
+              React Todo App
             </h3>
             <p className="text-gray-500 mb-4">
               A premium and responsive portfolio website to showcase my skills,
