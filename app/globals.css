@@ -1,27 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Global styles for custom scrollbar */
+/* Global styles for dark custom scrollbar */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* For Webkit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    height: 12px;
+    /* Height of the scrollbar for horizontal scroll */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-track {
+    background: #1c1c1c;
+    /* Dark background color of the scrollbar track */
+    border-radius: 8px;
+    /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    /* Dark gray color for the scrollbar thumb */
+    border-radius: 8px;
+    /* Rounded corners for the thumb */
+    transition: background 0.3s;
+    /* Smooth transition on hover */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #757575;
+    /* Lighter gray on hover */
+}
+
+main {
+    margin-top: 80px;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+    background-color: #f8f4e3;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }

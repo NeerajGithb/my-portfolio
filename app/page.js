@@ -1,101 +1,98 @@
+"use client";
+
 import Image from "next/image";
+import myImage from "./image/me.jpeg";
+import Link from "next/link";
+// Custom hook to track the zoom level
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-[#f8f4e3] max-w-full overflow-x-hidden relative ">
+      {/* Main Content Area */}
+      <div className="max-sm:mt-28 max-lg:mt-20">
+        <div className="h-[90vh] flex flex-col justify-center">
+          <div className="h-20"></div>
+          <div className="flex max-xl:flex-col items-center gap-4 justify-center px-3 text-center ">
+            <div className="flex items-center gap-4 max-sm:flex-col  max-sm:justify-center max-sm:w-full  max-sm:border-b ">
+              <div className="sm:max-w-[300px] w-full text-left border-b border-gray-600 ml-14 ">
+                <h1 className="text-4xl font-bold mb-4 text-gray-800 hover:scale-105 transition-transform duration-200">
+                  <span className="block">Hello, 👋</span>
+                  <span className="block text-3xl">
+                    I am Neeraj Vishwakarma
+                  </span>
+                </h1>
+              </div>
+              <div>
+                <div className="w-48 h-48 relative mb-6 hover:scale-105 transition-transform duration-200">
+                  <Image
+                    src={myImage}
+                    alt="Neeraj"
+                    fill // Use fill for responsive image
+                    sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw" // Responsive sizes
+                    priority // Load image first
+                    style={{ objectFit: "cover" }} // Maintain aspect ratio
+                    className="rounded-full border-4 border-purple-500"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="border-b  text-left bg-white  shadow-md rounded-lg p-6 ml-14">
+              <h1 className="text-lg md:text-xl mb-4 max-w-2xl ml-5  font-bold">
+                A Bit About Me
+              </h1>
+              <p className="text-lg  mb-8 max-w-2xl ml-5 text-gray-700 font-semibold italic">
+                &quot;I&apos;m Neeraj Vishwakarma, a passionate software
+                engineer dedicated to crafting reliable, high-performance
+                applications. I thrive on solving complex challenges and
+                delivering clean, efficient code. With a strong foundation in
+                both front-end and back-end development, I&apos;m eager to
+                contribute to innovative projects and lead teams towards
+                success.&quot;
+              </p>
+              <div className="ml-5 mt-24">
+                <ul className="list-none flex  gap-6">
+                  <li>
+                    <Link href="/about">
+                      <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                        About
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/skills">
+                      <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                        Skills
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/projects">
+                      <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                        Projects
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resume">
+                      <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                        Resume
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                        Contact
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="h-20"></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
