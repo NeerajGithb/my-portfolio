@@ -2,7 +2,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-100 to-gray-300 py-16 px-8">
+    <div className="min-h-screen bg-gradient-to-r from-gray-100 to-gray-300 py-16 px-10 pl-[10vw]">
       {/* Page Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h1 className="text-5xl font-bold text-gray-800 tracking-wide mb-4">
