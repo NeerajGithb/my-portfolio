@@ -5,7 +5,7 @@ const page = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-10 pl-[10vw]">
       {/* Page Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-5xl font-bold text-gray-800 tracking-wide mb-4">
+        <h1 className="2xl:text-5xl text-4xl font-bold text-gray-800 tracking-wide mb-4">
           Get in Touch
         </h1>
         <p className="text-xl text-gray-600">
