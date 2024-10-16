@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Navbar2 from "./components/Navbar2";
 import Sidebar from "./components/Sidebar";
 import "./globals.css";
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
+        <Navbar2 />
         <main className="">{children}</main>
         <Sidebar />
       </body>
