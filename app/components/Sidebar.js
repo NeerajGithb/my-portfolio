@@ -9,7 +9,7 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className=" h-[30vh]  fixed top-20 lg:left-4 p-4">
+    <div className=" h-[30vh]  fixed top-28 lg:left-4 p-4">
       <ul className="flex  flex-col items-center space-y-10">
         <li>
           <Link
