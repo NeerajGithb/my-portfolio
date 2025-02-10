@@ -4,7 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 
 const Navbar = () => {
   return (
-    <div className="max-sm:min-h-[60px] max-sm:max-h-[60px] flex items-center justify-between px-2 lg:px-10 xl:py-4 py-2 border-b-2 border-black shadow-lg bg-gradient-to-br from-gray-100 to-gray-300 fixed top-0 w-full z-[10000]">
+    <div className="max-sm:min-h-[50px] max-sm:max-h-[50px] flex items-center justify-between px-2 lg:px-10 xl:py-4 py-2  shadow-lg bg-gradient-to-br from-gray-100 to-gray-300 fixed top-0 w-full z-[10000]">
       <div className="lg:text-xl font-bold flex items-center gap-3">
         <Link
           href={"/"}

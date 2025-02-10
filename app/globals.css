@@ -32,10 +32,16 @@
     background: #757575;
     /* Lighter gray on hover */
 }
-
-main {
-    margin-top: 80px;
+main{
+    margin-top: 60px;
 }
+@media screen and (max-width: 1279px) {
+    main{
+    margin-top: 80px;
+
+    }
+}
+
 
 body {
     background-color: #f8f4e3;

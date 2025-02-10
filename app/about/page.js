@@ -1,9 +1,14 @@
-// app/about.js
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import myImage from "../image/me.jpeg"; // Replace with your image path
 export default function About() {
   return (
-    <div className="bg-[#f8f4e3]  grid grid-rows p-10 pl-[10vw]">
+    <motion.div
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.3 }}
+     className="bg-[#f8f4e3]  grid grid-rows px-3 py-10 sm:p-10 sm:pl-[10vw]">
       {/* Hero Section */}
       <div className="flex max-2xl:flex-col gap-5 mb-10 ">
         <div className="relative min-w-40 min-h-40 max-w-40 max-h-40 max-lg:ml-10   mb-4  p-6   transform transition-transform hover:scale-105">
@@ -139,6 +144,6 @@ export default function About() {
           </a>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 }

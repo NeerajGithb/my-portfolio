@@ -1,8 +1,14 @@
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 
 const page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-10 pl-[10vw]">
+    <motion.div
+    initial={{ y: 30, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.3 }}
+    className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3 sm:px-10 sm:pl-[10vw]">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h1 className="2xl:text-5xl text-4xl font-bold text-gray-800 tracking-wide mb-4">
@@ -96,7 +102,7 @@ const page = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
