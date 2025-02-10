@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import first from "../url-shortener/sc/1.png";
-import second from "../url-shortener/sc/2.png";
-import third from "../url-shortener/sc/3.png";
-import fourth from "../url-shortener/sc/4.png";
-import fifth from "../url-shortener/sc/5.png";
-import sixth from "../url-shortener/sc/6.png";
+import first from "../url-shortner/sc/1.png";
+import second from "../url-shortner/sc/2.png";
+import third from "../url-shortner/sc/3.png";
+import fourth from "../url-shortner/sc/4.png";
+import fifth from "../url-shortner/sc/5.png";
+import sixth from "../url-shortner/sc/6.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Page = () => {
