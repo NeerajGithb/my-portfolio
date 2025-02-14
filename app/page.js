@@ -40,15 +40,17 @@ export default function Home() {
               <h1 className="text-lg md:text-xl mb-4 max-w-2xl ml-5  font-bold">
                 A Bit About Me
               </h1>
-              <p className="text-lg  mb-8 max-w-2xl ml-4 text-gray-700 font-semibold italic">
-                &quot;I&apos;m Neeraj Vishwakarma, a passionate software
-                engineer dedicated to crafting reliable, high-performance
-                applications. I thrive on solving complex challenges and
-                delivering clean, efficient code. With a strong foundation in
-                both front-end and back-end development, I&apos;m eager to
-                contribute to innovative projects and lead teams towards
-                success.&quot;
+              <p className="text-lg mb-8 max-w-2xl ml-4 text-gray-700 font-semibold italic">
+                &quot;I&apos;m Neeraj Vishwakarma, a highly passionate and
+                results-driven software engineer committed to crafting seamless,
+                high-performance applications. My expertise spans both front-end
+                and back-end development, allowing me to build scalable and
+                efficient solutions. I thrive on solving complex challenges and
+                transforming ideas into reality with clean, maintainable code.
+                My goal is to push the boundaries of innovation and create
+                impactful digital experiences.&quot;
               </p>
+
               <div className="ml-5 mx-auto flex justify-between max-2xl:hidden">
                 <Link href="/about">
                   <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
