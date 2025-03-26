@@ -46,16 +46,15 @@ export default function Home() {
                 A Bit About Me
               </h1>
               <p className="text-lg mb-8 max-w-2xl ml-4 text-gray-700 font-semibold italic">
-                <p>
-                  &quot;I&apos;m Neeraj Vishwakarma, a passionate software
-                  engineer who loves building fast, reliable, and user-friendly
-                  applications. I work on both front-end and back-end, making
-                  sure everything runs smoothly. I enjoy solving complex
-                  problems and turning ideas into real, working solutions with
-                  clean and maintainable code. My goal is to keep learning,
-                  improving, and creating digital experiences that make a
-                  difference.&quot;
-                </p>
+              <p>{`"I'm Neeraj Vishwakarma. a passionate software
+                engineer who loves building fast, reliable, and user-friendly
+                applications. I work on both front-end and back-end, making
+                sure everything runs smoothly. I enjoy solving complex
+                problems and turning ideas into real, working solutions with
+                clean and maintainable code. My goal is to keep learning,
+                improving, and creating digital experiences that make a
+                difference.";
+                `}</p>
               </p>
 
               <div className="ml-5 mx-auto flex flex-col sm:flex-row sm:justify-between max-sm:gap-4">
@@ -68,7 +67,7 @@ export default function Home() {
 
                   <Link href="/contact">
                     <span className="link inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                      Let's Connect
+                      {`Let's Connect`}
                     </span>
                   </Link>
                 </div>
