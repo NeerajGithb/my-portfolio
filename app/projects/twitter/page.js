@@ -48,7 +48,7 @@ const Page = () => {
           <h2 className="text-2xl font-bold text-gray-800">✨ Key Features</h2>
           <ul className="mt-3 text-gray-600 space-y-1">
             <li>📜 Tweeting functionality</li>
-            <li>💙 Like, Retweet, and Comment options</li>
+            <li>💙 See posts</li>
             <li>🌐 Responsive for all devices</li>
           </ul>
         </div>

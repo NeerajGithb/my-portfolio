@@ -3,6 +3,7 @@
 @tailwind utilities;
 /* Global styles for custom scrollbar */
 /* Global styles for dark custom scrollbar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* For Webkit Browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
@@ -47,3 +48,18 @@ body {
     background-color: #f8f4e3;
 
 }
+
+.no-margin {
+    min-width: 190% !important;
+    margin-top: 0 !important;
+}
+
+@media screen and (max-width: 410px) {
+    .work{
+        flex-direction: column;
+        gap: 4px;
+    }
+    .link{
+        width: 100%;
+    }
+  }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -16,7 +16,7 @@ const Page = () => {
       initial={{ y: 30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3 sm:px-10 sm:pl-[10vw]"
+      className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3 "
     >
       {/* Page Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
@@ -32,7 +32,7 @@ const Page = () => {
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Project Card */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
             src={musicImg}
             alt="E-commerce Platform"
@@ -40,25 +40,24 @@ const Page = () => {
             height={300}
             className="w-full h-48 object-cover"
           />
-          <div className="p-6">
+          <div className="p-6 flex flex-col justify-between ">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Neeraj Music Web
+            🎵 Music Streaming App
             </h3>
             <p className="text-gray-500 mb-4">
-              An advanced Music website with features such as product listing,
-              payment gateway integration, and a user-friendly admin dashboard.
+              A lightweight music player with a clean UI & responsive design.
             </p>
             <Link
               href="/projects/music-web"
-              className="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg"
+              className="w-full bg-gray-800 text-white px-4 py-2 rounded-lg flex items-center justify-center"
             >
-              View Project
+              <span className="font-semibold text-sm">View Project</span>
             </Link>
           </div>
         </div>
 
         {/* Repeat for other project cards */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
             src={portfoloImg}
             alt="Portfolio Website"
@@ -66,9 +65,9 @@ const Page = () => {
             height={300}
             className="w-full h-48 object-cover"
           />
-          <div className="p-6">
+          <div className="p-6 flex flex-col justify-between ">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Portfolio Website
+            🌐 Portfolio Website
             </h3>
             <p className="text-gray-500 mb-4">
               A premium and responsive portfolio website to showcase my skills,
@@ -76,14 +75,14 @@ const Page = () => {
             </p>
             <Link
               href="/projects/portfolio"
-              className="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg"
+              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
             >
-              View Project
+              <span className="font-semibold text-sm">View Project</span>
             </Link>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
             src={netflixImg}
             alt="Portfolio Website"
@@ -91,23 +90,22 @@ const Page = () => {
             height={300}
             className="w-full h-48 object-cover"
           />
-          <div className="p-6">
+          <div className="p-6 flex flex-col justify-between ">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Netflix Clone
+            🎬 Netflix Clone
             </h3>
             <p className="text-gray-500 mb-4">
-              A premium and responsive portfolio website to showcase my skills,
-              achievements, and previous work.
+              A responsive Netflix UI built using HTML & CSS.
             </p>
             <Link
               href="/projects/netflix"
-              className="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg"
+              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
             >
-              View Project
+              <span className="font-semibold text-sm">View Project</span>
             </Link>
           </div>
         </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
             src={twitterImg}
             alt="Portfolio Website"
@@ -115,23 +113,25 @@ const Page = () => {
             height={300}
             className="w-full h-48 object-cover"
           />
-          <div className="p-6">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Twitter Clone
+          <div className="p-6 flex flex-col justify-between">
+           <div>
+           <h3 className="text-2xl font-semibold text-gray-700 mb-2">
+           🐦 X (Twitter) Clone 
             </h3>
             <p className="text-gray-500 mb-4">
-              A premium and responsive portfolio website to showcase my skills,
-              achievements, and previous work.
+              A modern, fully responsive Twitter clone built with HTML, CSS, and
+              JavaScript.
             </p>
+           </div>
             <Link
               href="/projects/twitter"
-              className="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg"
+              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg "
             >
-              View Project
+              <span className="font-semibold text-sm">View Project</span>
             </Link>
           </div>
         </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
             src={todoImg}
             alt="Portfolio Website"
@@ -139,9 +139,9 @@ const Page = () => {
             height={300}
             className="w-full h-48 object-cover"
           />
-          <div className="p-6">
+          <div className="p-6 flex flex-col justify-between ">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              React Todo App
+            ✅ Todo App
             </h3>
             <p className="text-gray-500 mb-4">
               A premium and responsive portfolio website to showcase my skills,
@@ -149,13 +149,13 @@ const Page = () => {
             </p>
             <Link
               href="/projects/todo"
-              className="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg"
+              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
             >
-              View Project
+              <span className="font-semibold text-sm">View Project</span>
             </Link>
           </div>
         </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
             src={facebookImg}
             alt="Facebook clone"
@@ -163,23 +163,25 @@ const Page = () => {
             height={300}
             className="w-full h-48 object-cover"
           />
-          <div className="p-6">
+          <div className="p-6 flex flex-col justify-between ">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Full Stack Facebook Clone
+            📘 Full Stack Facebook Clone
             </h3>
             <p className="text-gray-500 mb-4">
-              A premium and responsive portfolio website to showcase my skills,
-              achievements, and previous work.
+              A fully functional Facebook clone built using Next.js, MongoDB,
+              and Cloudinary. This project closely mimics the real Facebook app,
+              providing an in-depth learning experience in full-stack
+              development.
             </p>
             <Link
               href="/projects/facebook"
-              className="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg"
+              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
             >
-              View Project
+              <span className="font-semibold text-sm">View Project</span>
             </Link>
           </div>
         </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
           <Image
             src={urlImg}
             alt="Url Shortener"
@@ -187,19 +189,18 @@ const Page = () => {
             height={300}
             className="w-full h-48 object-cover"
           />
-          <div className="p-6">
+          <div className="p-6 flex flex-col justify-between">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-              Url Shortner
+            🔗 URL Shortener
             </h3>
             <p className="text-gray-500 mb-4">
-              A premium and responsive portfolio website to showcase my skills,
-              achievements, and previous work.
+              A simple URL shortener built with Next.js, React, and Tailwind CSS using local storage.
             </p>
             <Link
               href="/projects/url-shortner"
-              className="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg"
+              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
             >
-              View Project
+              <span className="font-semibold text-sm">View Project</span>
             </Link>
           </div>
         </div>

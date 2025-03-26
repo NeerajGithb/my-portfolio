@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 import Loader from "./lib/Loder";
 import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
-
 export default function ClientLayout({ children }) {
+
+
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
 
@@ -20,12 +21,24 @@ export default function ClientLayout({ children }) {
     return () => clearTimeout(timer);
   }, [pathname]); // Runs every time the route changes
 
+  const isResumePage = pathname === "/resume";
   return (
     <>
-      {loading && <Loader />} 
-      <Navbar />
-      <Navbar2 />
-      <main className={loading ? "hidden" : "block"}>{children}</main>
+      {loading && <Loader />}
+      {!isResumePage && (
+        <>
+          <Navbar />
+          <Navbar2 />
+        </>
+      )}
+
+      <main
+        className={`${loading ? "hidden" : "block"} ${
+          isResumePage ? "no-margin" : ""
+        }`}
+      >
+        {children}
+      </main>
     </>
   );
 }

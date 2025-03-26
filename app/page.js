@@ -3,7 +3,12 @@
 import Image from "next/image";
 import myImage from "./image/me.jpeg";
 import Link from "next/link";
-// Custom hook to track the zoom level
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
@@ -36,85 +41,82 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="border-b flex-grow  text-left bg-white  shadow-md rounded-lg p-5 2xl:ml-6 2xl:max-w-[40rem] ">
+            <div className="border-b flex-grow  text-left bg-white  shadow-md rounded-lg p-3 md:p-5 2xl:ml-6 2xl:max-w-[40rem] ">
               <h1 className="text-lg md:text-xl mb-4 max-w-2xl ml-5  font-bold">
                 A Bit About Me
               </h1>
               <p className="text-lg mb-8 max-w-2xl ml-4 text-gray-700 font-semibold italic">
-                &quot;I&apos;m Neeraj Vishwakarma, a highly passionate and
-                results-driven software engineer committed to crafting seamless,
-                high-performance applications. My expertise spans both front-end
-                and back-end development, allowing me to build scalable and
-                efficient solutions. I thrive on solving complex challenges and
-                transforming ideas into reality with clean, maintainable code.
-                My goal is to push the boundaries of innovation and create
-                impactful digital experiences.&quot;
+                "I'm Neeraj Vishwakarma, a passionate software engineer who
+                loves building fast, reliable, and user-friendly applications. I
+                work on both front-end and back-end, making sure everything runs
+                smoothly. I enjoy solving complex problems and turning ideas
+                into real, working solutions with clean and maintainable code.
+                My goal is to keep learning, improving, and creating digital
+                experiences that make a difference."
               </p>
 
-              <div className="ml-5 mx-auto flex justify-between max-2xl:hidden">
-                <Link href="/about">
-                  <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                    About
-                  </span>
-                </Link>
+              <div className="ml-5 mx-auto flex flex-col sm:flex-row sm:justify-between max-sm:gap-4">
+                <div className="flex justify-between gap-2 work">
+                  <Link href="/projects">
+                    <span className="link inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                      Explore My Work
+                    </span>
+                  </Link>
 
-                <Link href="/skills">
-                  <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                    Skills
-                  </span>
-                </Link>
+                  <Link href="/contact">
+                    <span className="link inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                      Let's Connect
+                    </span>
+                  </Link>
+                </div>
 
-                <Link href="/projects">
-                  <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                    Projects
-                  </span>
-                </Link>
-
-                <Link href="/resume">
-                  <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                    Resume
-                  </span>
-                </Link>
-
-                <Link href="/contact">
-                  <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                    Contact
-                  </span>
-                </Link>
+                <div className="p-2 w-full sm:w-[220px] bg-white backdrop-blur-xl  rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
+                  <ul className="flex items-center justify-around space-x-4">
+                    <li>
+                      <Link
+                        href="https://github.com/NeerajGithb"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative flex items-center justify-center w-8 h-8 border-[2px] border-gray-900 rounded-full overflow-hidden"
+                      >
+                        <span className="absolute inset-0 bg-black scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-4 h-4 text-black group-hover:text-white relative z-10 transition duration-300"
+                        />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="https://www.linkedin.com/in/neeraj-vishwakarma-b87592281"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative flex items-center justify-center w-8 h-8 border-[2px] border-blue-700 rounded-full overflow-hidden"
+                      >
+                        <span className="absolute inset-0 bg-blue-700 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                        <FontAwesomeIcon
+                          icon={faLinkedin}
+                          className="w-4 h-4 text-blue-700 group-hover:text-white relative z-10 transition duration-300"
+                        />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="https://x.com/NeerajVish89018"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative flex items-center justify-center w-8 h-8  border-[2px] border-blue-700 rounded-full overflow-hidden"
+                      >
+                        <span className="absolute inset-0 bg-blue-700 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                        <FontAwesomeIcon
+                          icon={faTwitter}
+                          className="w-4 h-4 text-blue-700 group-hover:text-white relative z-10 transition duration-300"
+                        />
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="2xl:hidden my-10 flex justify-center w-full ">
-            <div className="grid justify-between items-center grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5 w-full max-w-3xl  px-3 gap-y-8">
-              <Link href="/about" className="flex justify-center">
-                <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                  About
-                </span>
-              </Link>
-
-              <Link href="/skills" className="flex justify-center">
-                <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                  Skills
-                </span>
-              </Link>
-
-              <Link href="/projects" className="flex justify-center">
-                <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                  Projects
-                </span>
-              </Link>
-
-              <Link href="/resume" className="flex justify-center">
-                <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                  Resume
-                </span>
-              </Link>
-
-              <Link href="/contact" className="flex justify-center">
-                <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-                  Contact
-                </span>
-              </Link>
             </div>
           </div>
         </div>

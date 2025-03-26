@@ -1,15 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
-import Link from "next/link";
-
 const page = () => {
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
-       className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3 sm:px-10 sm:pl-[10vw]">
+       className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3 ">
       {/* Page Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h1 className="2xl:text-5xl text-4xl font-bold text-gray-800 tracking-wide mb-4">
@@ -20,10 +18,9 @@ const page = () => {
           hello!
         </p>
       </div>
-
-      {/* Contact Form and Details */}
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Contact Form */}
+      <div className="max-w-4xl mx-auto ">
+        {/*
+        Contact Form 
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-semibold mb-6 text-gray-800">
             Send a Message
@@ -65,25 +62,21 @@ const page = () => {
             </button>
           </form>
         </div>
-
+       */}
         {/* Contact Information */}
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-semibold mb-6 text-gray-800">
             Contact Details
           </h2>
           <p className="text-lg text-gray-600 mb-4">
-            <strong>Email:</strong> neeraj@example.com
+            <strong>Email:</strong> neerajvishwakarma6484.com
           </p>
           <p className="text-lg text-gray-600 mb-4">
-            <strong>Phone:</strong> +1 123-456-7890
+            <strong>Phone:</strong> +91 0000000000
           </p>
           <p className="text-lg text-gray-600 mb-4">
-            <strong>Location:</strong> 123 Street, City, Country
+            <strong>Location:</strong> Delhi 110092
           </p>
-
-          <h3 className="text-xl font-semibold mt-8 text-gray-800">
-            Follow Me
-          </h3>
           <div className="flex space-x-4 mt-4">
             {/* Replace "#" with actual social media links */}
             <a href="#" className="text-gray-500 hover:text-gray-800">
@@ -108,13 +101,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      <nav className="fixed bottom-0  right-0 flex justify-center p-1">
-        <Link href="/payment">
-          <span className="inline-block bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 shadow-md hover:shadow-xl hover:border-gray-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-[#f3f3f3]">
-            Suport me
-          </span>
-        </Link>
-      </nav>
     </motion.div>
   );
 };

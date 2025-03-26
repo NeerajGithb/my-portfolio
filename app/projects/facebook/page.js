@@ -59,8 +59,8 @@ const Page = () => {
             <li>📝 Post creation with image & video uploads</li>
             <li>👍 Like, Comment & Share functionality</li>
             <li>👥 User authentication & profile management</li>
-            <li>🔔 Real-time notifications</li>
-            <li>🌐 Friend requests & messaging</li>
+            <li>🔔 Real-time update</li>
+            <li>🌐 Friend requests & send request</li>
             <li>🎭 Dark mode support</li>
           </ul>
         </div>
@@ -72,7 +72,6 @@ const Page = () => {
             <li>📦 Efficient database management with MongoDB</li>
             <li>☁️ Cloudinary for handling media storage</li>
             <li>🔄 Implementing JWT-based authentication</li>
-            <li>📡 WebSocket for real-time messaging</li>
             <li>⚙️ Optimizing API performance</li>
           </ul>
         </div>

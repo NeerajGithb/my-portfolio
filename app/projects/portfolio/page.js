@@ -108,14 +108,14 @@ const Page = () => {
       {/* Links */}
       <div className="mt-10 flex justify-center gap-4 sm:gap-6">
         <a
-          href="https://music-n.vercel.app"
+          href="https://my-portfolio-n.vercel.app"
           target="_blank"
           className="flex items-center justify-center h-12 w-36 bg-blue-600 text-white font-bold rounded-lg shadow-lg transition hover:scale-105"
         >
           <span>🔗 Live Portfolio</span>
         </a>
         <a
-          href="https://github.com/NeerajGithb/Music-Web"
+          href="https://github.com/NeerajGithb/my-portfolio"
           target="_blank"
           className="flex items-center justify-center h-12 w-40 bg-gray-900 text-white font-bold rounded-lg shadow-lg transition hover:scale-105"
         >
