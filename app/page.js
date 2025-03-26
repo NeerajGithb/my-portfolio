@@ -46,13 +46,13 @@ export default function Home() {
                 A Bit About Me
               </h1>
               <p className="text-lg mb-8 max-w-2xl ml-4 text-gray-700 font-semibold italic">
-                "I'm Neeraj Vishwakarma, a passionate software engineer who
-                loves building fast, reliable, and user-friendly applications. I
-                work on both front-end and back-end, making sure everything runs
-                smoothly. I enjoy solving complex problems and turning ideas
-                into real, working solutions with clean and maintainable code.
-                My goal is to keep learning, improving, and creating digital
-                experiences that make a difference."
+                &quot;I&apos;m Neeraj Vishwakarma, a passionate software
+                engineer who loves building fast, reliable, and user-friendly
+                applications. I work on both front-end and back-end, making sure
+                everything runs smoothly. I enjoy solving complex problems and
+                turning ideas into real, working solutions with clean and
+                maintainable code. My goal is to keep learning, improving, and
+                creating digital experiences that make a difference.&quot;
               </p>
 
               <div className="ml-5 mx-auto flex flex-col sm:flex-row sm:justify-between max-sm:gap-4">
