@@ -1,6 +1,6 @@
-// 🚀 Server-side layout (NO "use client")
-import ClientLayout from "./client-layout";
 import "./globals.css";
+import Script from "next/script";
+import ClientLayout from "./client-layout";
 
 export const metadata = {
   title: "Neeraj Vishwakarma | Full-Stack Developer Portfolio",
@@ -15,6 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        {/* ✅ Auto Ads Script handled properly */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3077714211582326"
+         crossOrigin="anonymous"></script>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
