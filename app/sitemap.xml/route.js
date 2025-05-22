@@ -1,6 +1,22 @@
 export async function GET() {
-  const baseUrl = "https://my-portfolio-n.vercel.app"; // use your own domain if you get one
-  const routes = ["", "projects", "contact", "about","resume", "skills", "facebook","music-web","netfkix","portfolio","todo","twitter","url-shortner"]; // update as needed
+  const baseUrl = "https://my-portfolio-n.vercel.app"; // your website URL
+
+  // List all your public routes here
+  const routes = [
+    "", // homepage
+    "projects",
+    "contact",
+    "about",
+    "resume",
+    "skills",
+    "facebook",
+    "music-web",
+    "netfkix",
+    "portfolio",
+    "todo",
+    "twitter",
+    "url-shortner",
+  ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
