@@ -4,92 +4,8 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRef } from "react";
-import { useState } from "react";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 const Page = () => {
-  const [isDownloading, setIsDownloading] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const resumeRef = useRef(null);
-
-  const handleDownload = async () => {
-    setIsDownloading(true);
-    setProgress(0);
-
-    const element = resumeRef.current;
-    if (!element) return;
-
-    let progressValue = 0;
-
-    // 🔥 Progress bar background me continuously badhta rahega
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev < 95) {
-          progressValue += 3; // Har update pe +3% karega
-          return progressValue;
-        } else {
-          return prev;
-        }
-      });
-    }, 300); // 300ms me har bar progress update hoga
-
-    try {
-      // 🌟 Image capture process (background me)
-      const canvasPromise = html2canvas(element, {
-        scale: 4,
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-      });
-
-      const canvas = await canvasPromise;
-
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({
-        orientation: "p",
-        unit: "mm",
-        format: "a4",
-        compress: true,
-      });
-
-      const imgWidth = 210;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight, "FAST");
-
-      // ⏹️ Stop progress increment at 95%
-      clearInterval(progressInterval);
-      setProgress(95);
-
-      // 🕒 Delay for smooth 100% transition (Har 100ms me +2% badhata rahega)
-      const completeProgressInterval = setInterval(() => {
-        setProgress((prev) => {
-          if (prev < 100) {
-            return prev + 2;
-          } else {
-            clearInterval(completeProgressInterval);
-            return 100;
-          }
-        });
-      }, 100);
-
-      // 📂 Save PDF (2 sec delay to match progress smoothness)
-      setTimeout(() => {
-        pdf.save("Neeraj_Vishwakarma_Resume.pdf");
-      }, 2000);
-
-      // 🔄 Reset after complete download
-      setTimeout(() => {
-        setIsDownloading(false);
-        setProgress(0);
-      }, 2500);
-    } catch (error) {
-      console.error("Download error:", error);
-      setIsDownloading(false);
-      setProgress(0);
-    }
-  };
-
+  
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
@@ -110,10 +26,8 @@ const Page = () => {
       {/* Resume Content */}
 
       <div
-        ref={resumeRef}
         className="w-[794px] h-[1123px] mx-auto bg-white px-4 py-6 shadow-lg rounded-lg"
       >
-        {/* Header */}
         <div className="text-center">
           <h1 className="text-2xl font-bold font-[Merriweather]">
             Neeraj Vishwakarma
@@ -234,44 +148,6 @@ const Page = () => {
             </li>
           </ul>
         </Section>
-      </div>
-      <div className="flex justify-center mt-6">
-        <button
-          onClick={handleDownload}
-          className="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300 flex items-center gap-2"
-          disabled={isDownloading}
-        >
-          {isDownloading ? (
-            <>
-              <div className="relative flex items-center space-x-2">
-                <span className="text-white text-sm">Downloading...</span>
-
-                <div className="relative w-8 h-8">
-                  <svg className="w-full h-full" viewBox="0 0 50 50">
-                    <circle
-                      cx="25"
-                      cy="25"
-                      r="20"
-                      stroke="white"
-                      strokeWidth="3"
-                      fill="none"
-                      strokeDasharray="125.6"
-                      strokeDashoffset={125.6 * (1 - progress / 100)}
-                      strokeLinecap="round"
-                      className="transition-[stroke-dashoffset] duration-100 ease-linear"
-                    />
-                  </svg>
-
-                  <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-white">
-                    {progress}%
-                  </span>
-                </div>
-              </div>
-            </>
-          ) : (
-            "Download Resume as PDF"
-          )}
-        </button>
       </div>
     </motion.div>
   );

@@ -21,9 +21,7 @@ export default function PasswordProtected() {
 
     if (res.ok) {
       console.log("Success: Redirecting to /resume...");
-      setTimeout(() => {
         router.push("/resume"); // ✅ Add delay before redirecting
-      }, 500);
     } else {
       setError("Incorrect password. Try again.");
     }
