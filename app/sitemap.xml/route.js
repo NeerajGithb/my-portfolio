@@ -1,4 +1,5 @@
 // app/sitemap.xml/route.js
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   const baseUrl = "https://my-portfolio-n.vercel.app";
@@ -9,22 +10,18 @@ export async function GET() {
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${routes
-    .map(
-      (route) => `
-    <url>
-      <loc>${baseUrl}/${route}</loc>
-      <lastmod>${new Date().toISOString()}</lastmod>
-    </url>
-  `
-    )
-    .join("")}
-</urlset>`;
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${routes.map(route => `
+        <url>
+          <loc>${baseUrl}/${route}</loc>
+          <lastmod>${new Date().toISOString()}</lastmod>
+        </url>`).join("")}
+    </urlset>`;
 
   return new Response(sitemap, {
     headers: {
       "Content-Type": "application/xml",
     },
+    status: 200,
   });
 }
