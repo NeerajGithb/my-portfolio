@@ -129,7 +129,7 @@ export default function Contact() {
             Available for Opportunities
           </h3>
           <p className="text-sm text-neutral-600">
-            I'm currently open to full-time positions and freelance projects.
+            I&apos;m currently open to full-time positions and freelance projects.
           </p>
         </Card>
       </div>

@@ -13,11 +13,10 @@ export default function About() {
   ];
 
   const projects = [
-    { name: "Furniture E-Commerce", url: "https://your-furniture-site.vercel.app" },
+    { name: "Furniture E-Commerce", url: "https://furnitur.online" },
     { name: "Facebook Clone", url: "https://facebook-n.vercel.app" },
     { name: "URL Shortener", url: "https://quick-n.vercel.app" },
     { name: "Music Streaming App", url: "https://music-n.vercel.app" },
-    { name: "Todo App", url: "#" },
     { name: "Portfolio Website", url: "https://neerajvishwakarma.vercel.app" },
   ];
 
@@ -44,7 +43,7 @@ export default function About() {
               About Me
             </h1>
             <p className="text-base text-neutral-700 leading-relaxed">
-              I'm Neeraj Vishwakarma, a passionate BCA student and full-stack developer.
+              I&apos;m Neeraj Vishwakarma, a passionate BCA student and full-stack developer.
               My journey into tech began with a deep curiosity about web technologies,
               and since then, I have dedicated myself to building scalable, responsive,
               and efficient applications.
@@ -124,10 +123,10 @@ export default function About() {
         {/* CTA Section */}
         <Card className="p-8 text-center">
           <h2 className="text-2xl font-semibold text-neutral-900 mb-3">
-            Let's Connect!
+            Let&apos;s Connect!
           </h2>
           <p className="text-base text-neutral-700 mb-6 max-w-2xl mx-auto">
-            I would love to collaborate and bring ideas to life. Let's discuss
+            I would love to collaborate and bring ideas to life. Let&apos;s discuss
             how we can work together!
           </p>
           <Button href="/contact" variant="primary">

@@ -27,10 +27,7 @@ export default function ClientLayout({ children }) {
       {loading && <Loader />}
       {!isResumePage && <Navbar />}
 
-      <main
-        className={`${loading ? "hidden" : "block"} ${isResumePage ? "no-margin" : ""
-          }`}
-      >
+      <main className={isResumePage ? "no-margin" : ""}>
         {children}
       </main>
 

@@ -69,7 +69,7 @@ export default function Home() {
             <div className="h-px bg-neutral-200"></div>
 
             <p className="text-base text-neutral-700 leading-relaxed">
-              I'm a passionate software engineer who loves building fast, reliable,
+              I&apos;m a passionate software engineer who loves building fast, reliable,
               and user-friendly applications. I work on both front-end and back-end,
               making sure everything runs smoothly. I enjoy solving complex problems
               and turning ideas into real, working solutions with clean and maintainable code.
