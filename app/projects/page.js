@@ -1,212 +1,137 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+
 import Image from "next/image";
-import musicImg from "../image/music.png";
-import portfoloImg from "../image/portfolio.png";
-import netflixImg from "../image/netflix.png";
-import twitterImg from "../image/twitter.png";
-import todoImg from "../image/todo.png";
-import facebookImg from "../image/facebook.png";
-import urlImg from "../image/url.png";
 import Link from "next/link";
-const Page = () => {
+
+export default function Projects() {
+  const projects = [
+    {
+      title: "Furniture E-Commerce",
+      emoji: "🛋️",
+      description: "Production-ready e-commerce with Razorpay payments, JWT auth, and scalable APIs.",
+      image: "/images/furniture.png",
+      link: "/projects/furniture",
+      tags: ["Next.js", "MongoDB", "Razorpay"],
+    },
+    {
+      title: "Facebook Clone",
+      emoji: "📘",
+      description: "Full-stack social platform with posts, likes, comments using Next.js and MongoDB.",
+      image: "/images/facebook.png",
+      link: "/projects/facebook",
+      tags: ["Next.js", "MongoDB", "Cloudinary"],
+    },
+    {
+      title: "URL Shortener",
+      emoji: "🔗",
+      description: "Fast URL shortening service with click tracking and custom aliases.",
+      image: "/images/url.png",
+      link: "/projects/url-shortner",
+      tags: ["Next.js", "React", "Tailwind"],
+    },
+    {
+      title: "Music Player",
+      emoji: "🎵",
+      description: "Lightweight music streaming app with clean UI and responsive design.",
+      image: "/images/music.png",
+      link: "/projects/music-web",
+      tags: ["HTML", "CSS", "JavaScript"],
+    },
+    {
+      title: "Todo App",
+      emoji: "✅",
+      description: "Task management application with local storage and modern interface.",
+      image: "/images/todo.png",
+      link: "/projects/todo",
+      tags: ["JavaScript", "CSS", "HTML"],
+    },
+    {
+      title: "Portfolio",
+      emoji: "🌐",
+      description: "Personal portfolio showcasing projects and skills with responsive design.",
+      image: "/images/portfolio.png",
+      link: "/projects/portfolio",
+      tags: ["Next.js", "Tailwind", "React"],
+    },
+  ];
+
   return (
-    <motion.div
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3 "
-    >
-      {/* Page Header */}
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="2xl:text-5xl text-4xl font-bold text-gray-800 tracking-wide mb-4">
-          Projects
-        </h1>
-        <p className="text-xl text-gray-600">
-          Explore some of the key projects I have built, showcasing my skills in
-          development, design, and innovation.
-        </p>
-      </div>
-
-      {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Project Card */}
-        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-          <Image
-            src={musicImg}
-            alt="E-commerce Platform"
-            width={400}
-            height={300}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6 flex flex-col justify-between ">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-            🎵 Music Streaming App
-            </h3>
-            <p className="text-gray-500 mb-4">
-              A lightweight music player with a clean UI & responsive design.
-            </p>
-            <Link
-              href="/projects/music-web"
-              className="w-full bg-gray-800 text-white px-4 py-2 rounded-lg flex items-center justify-center"
-            >
-              <span className="font-semibold text-sm">View Project</span>
-            </Link>
+    <div className="min-h-screen bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <div className="inline-block px-4 py-1.5 bg-neutral-900 text-white text-xs font-medium rounded-full mb-4">
+            Latest Work
           </div>
+          <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-6">
+            Featured Projects
+          </h1>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Showcasing full-stack applications, APIs, and interactive experiences
+          </p>
         </div>
 
-        {/* Repeat for other project cards */}
-        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-          <Image
-            src={portfoloImg}
-            alt="Portfolio Website"
-            width={400}
-            height={300}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6 flex flex-col justify-between ">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-            🌐 Portfolio Website
-            </h3>
-            <p className="text-gray-500 mb-4">
-              A premium and responsive portfolio website to showcase my skills,
-              achievements, and previous work.
-            </p>
+        {/* Projects Grid - 3 per row */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
             <Link
-              href="/projects/portfolio"
-              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
+              key={index}
+              href={project.link}
+              className="group"
             >
-              <span className="font-semibold text-sm">View Project</span>
-            </Link>
-          </div>
-        </div>
+              <div className="bg-white rounded-sm border border-neutral-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-neutral-300 hover:-translate-y-1">
+                {/* Image */}
+                <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                    className="transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-neutral-900 bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300" />
+                </div>
 
-        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-          <Image
-            src={netflixImg}
-            alt="Portfolio Website"
-            width={400}
-            height={300}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6 flex flex-col justify-between ">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-            🎬 Netflix Clone
-            </h3>
-            <p className="text-gray-500 mb-4">
-              A responsive Netflix UI built using HTML & CSS.
-            </p>
-            <Link
-              href="/projects/netflix"
-              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
-            >
-              <span className="font-semibold text-sm">View Project</span>
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-2xl">{project.emoji}</span>
+                    <h3 className="text-xl font-semibold text-neutral-900">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-sm text-neutral-600 mb-4 line-clamp-2 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 bg-neutral-100 text-neutral-700 text-xs rounded-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* View Link */}
+                  <div className="flex items-center text-sm font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
+                    View Project
+                    <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </Link>
-          </div>
-        </div>
-        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-          <Image
-            src={twitterImg}
-            alt="Portfolio Website"
-            width={400}
-            height={300}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6 flex flex-col justify-between">
-           <div>
-           <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-           🐦 X (Twitter) Clone 
-            </h3>
-            <p className="text-gray-500 mb-4">
-              A modern, fully responsive Twitter clone built with HTML, CSS, and
-              JavaScript.
-            </p>
-           </div>
-            <Link
-              href="/projects/twitter"
-              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg "
-            >
-              <span className="font-semibold text-sm">View Project</span>
-            </Link>
-          </div>
-        </div>
-        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-          <Image
-            src={todoImg}
-            alt="Portfolio Website"
-            width={400}
-            height={300}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6 flex flex-col justify-between ">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-            ✅ Todo App
-            </h3>
-            <p className="text-gray-500 mb-4">
-              A premium and responsive portfolio website to showcase my skills,
-              achievements, and previous work.
-            </p>
-            <Link
-              href="/projects/todo"
-              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
-            >
-              <span className="font-semibold text-sm">View Project</span>
-            </Link>
-          </div>
-        </div>
-        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-          <Image
-            src={facebookImg}
-            alt="Facebook clone"
-            width={400}
-            height={300}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6 flex flex-col justify-between ">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-            📘 Full Stack Facebook Clone
-            </h3>
-            <p className="text-gray-500 mb-4">
-              A fully functional Facebook clone built using Next.js, MongoDB,
-              and Cloudinary. This project closely mimics the real Facebook app,
-              providing an in-depth learning experience in full-stack
-              development.
-            </p>
-            <Link
-              href="/projects/facebook"
-              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
-            >
-              <span className="font-semibold text-sm">View Project</span>
-            </Link>
-          </div>
-        </div>
-        <div className="flex flex-col justify-between bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-          <Image
-            src={urlImg}
-            alt="Url Shortener"
-            width={400}
-            height={300}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6 flex flex-col justify-between">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-            🔗 URL Shortener
-            </h3>
-            <p className="text-gray-500 mb-4">
-              A simple URL shortener built with Next.js, React, and Tailwind CSS using local storage.
-            </p>
-            <Link
-              href="/projects/url-shortner"
-              className=" bg-gray-800 text-white px-4 py-2  flex items-center justify-center rounded-lg"
-            >
-              <span className="font-semibold text-sm">View Project</span>
-            </Link>
-          </div>
+          ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
-};
-
-export default Page;
+}

@@ -4,41 +4,37 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Loader from "./lib/Loder";
 import Navbar from "./components/Navbar";
-import Navbar2 from "./components/Navbar2";
+import Footer from "./components/Footer";
+
 export default function ClientLayout({ children }) {
-
-
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true); // Show loader when navigating
+    setLoading(true);
 
     const timer = setTimeout(() => {
-      setLoading(false); // Hide loader after content is loaded
-    }, 200); // 500ms delay to simulate component loading
+      setLoading(false);
+    }, 200);
 
     return () => clearTimeout(timer);
-  }, [pathname]); // Runs every time the route changes
+  }, [pathname]);
 
   const isResumePage = pathname === "/resume";
+
   return (
     <>
       {loading && <Loader />}
-      {!isResumePage && (
-        <>
-          <Navbar />
-          <Navbar2 />
-        </>
-      )}
+      {!isResumePage && <Navbar />}
 
       <main
-        className={`${loading ? "hidden" : "block"} ${
-          isResumePage ? "no-margin" : ""
-        }`}
+        className={`${loading ? "hidden" : "block"} ${isResumePage ? "no-margin" : ""
+          }`}
       >
         {children}
       </main>
+
+      {!isResumePage && <Footer />}
     </>
   );
 }

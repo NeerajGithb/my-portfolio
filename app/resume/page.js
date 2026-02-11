@@ -1,205 +1,149 @@
 "use client";
-import React from "react";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
+
 import Link from "next/link";
-const Page = () => {
-  
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+export default function Resume() {
   return (
-    <motion.div
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3"
-    >
-      {/* Section Header */}
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="2xl:text-5xl text-4xl font-bold text-gray-800 tracking-wide mb-4 font-[Merriweather]">
-          My Resume
-        </h1>
-        <p className="text-xl text-gray-600 font-[Inter]">
-          A brief overview of my education, work experience, and skills.
-        </p>
-      </div>
-
-      {/* Resume Content */}
-
-      <div
-        className="w-[794px] h-[1123px] mx-auto bg-white px-4 py-6 shadow-lg rounded-lg"
-      >
-        <div className="text-center">
-          <h1 className="text-2xl font-bold font-[Merriweather]">
-            Neeraj Vishwakarma
-          </h1>
+    <div className="min-h-screen bg-neutral-50 py-12">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Resume</h1>
+          <p className="text-base text-neutral-600">
+            A brief overview of my education, work experience, and skills.
+          </p>
         </div>
 
-        <address
-          className="flex items-center justify-center gap-3 p-2 text-blue-700 font-semibold not-italic text-center"
-          style={{
-            display: "flex",
-            whiteSpace: "nowrap",
-            textAlign: "center",
-          }}
-        >
-          <a
-            href="mailto:neerajvishwakarma6484@gmail.com"
-            style={{ flexShrink: 0 }}
-          >
-            neerajvishwakarma6484@gmail.com
-          </a>
-          <span>|</span>
-          <a href="tel:+918287168307" style={{ flexShrink: 0 }}>
-            +91 8287168307
-          </a>
-        </address>
+        {/* Resume Content */}
+        <div className="bg-white border border-neutral-200 rounded-sm p-8 shadow-sm">
+          {/* Header Info */}
+          <div className="text-center border-b border-neutral-200 pb-6 mb-6">
+            <h2 className="text-2xl font-bold text-neutral-900 mb-3">
+              Neeraj Vishwakarma
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-primary-600">
+              <a href="mailto:neerajvishwakarma6484@gmail.com" className="hover:underline">
+                neerajvishwakarma6484@gmail.com
+              </a>
+              <span className="text-neutral-400">|</span>
+              <a href="tel:+918287168307" className="hover:underline">
+                +91 8287168307
+              </a>
+            </div>
 
-        {/* Social Links */}
-        <div className="w-full flex justify-between items-center px-4 my-3">
-          <SocialLink
-            href="https://www.linkedin.com/in/neeraj-vishwakarma-b87592281"
-            icon={faLinkedin}
-            borderColor="border-blue-700"
-            bgColor="bg-blue-700"
-          />
-          <SocialLink
-            href="https://github.com/NeerajGithb"
-            icon={faGithub}
-            borderColor="border-gray-900"
-            bgColor="bg-black"
-          />
+            {/* Social Links */}
+            <div className="flex justify-center gap-3 mt-4">
+              <Link
+                href="https://www.linkedin.com/in/neeraj-vishwakarma-b87592281"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-neutral-300 hover:bg-neutral-50 transition-colors"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4 text-neutral-700" />
+              </Link>
+              <Link
+                href="https://github.com/NeerajGithb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-neutral-300 hover:bg-neutral-50 transition-colors"
+              >
+                <FontAwesomeIcon icon={faGithub} className="w-4 h-4 text-neutral-700" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Skills */}
+          <section className="mb-8">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Skills</h3>
+            <div className="space-y-2 text-sm">
+              <div><span className="font-medium text-neutral-900">Language:</span> <span className="text-neutral-700">C++, JavaScript</span></div>
+              <div><span className="font-medium text-neutral-900">Frontend:</span> <span className="text-neutral-700">Next.js, React.js, HTML, CSS, Tailwind CSS</span></div>
+              <div><span className="font-medium text-neutral-900">Backend:</span> <span className="text-neutral-700">Node.js, Express.js</span></div>
+              <div><span className="font-medium text-neutral-900">Database:</span> <span className="text-neutral-700">MongoDB</span></div>
+              <div><span className="font-medium text-neutral-900">Development Tools:</span> <span className="text-neutral-700">Git, GitHub</span></div>
+              <div><span className="font-medium text-neutral-900">API & Security:</span> <span className="text-neutral-700">REST APIs, JWT Authentication</span></div>
+              <div><span className="font-medium text-neutral-900">Computer Science:</span> <span className="text-neutral-700">DSA (Basic), OOPs</span></div>
+            </div>
+          </section>
+
+          {/* Projects */}
+          <section className="mb-8">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Projects</h3>
+            <div className="space-y-5">
+              <ProjectItem
+                name="Furniture E-Commerce Website (Full Stack)"
+                techStack="Next.js, React, Tailwind CSS, Node.js, MongoDB, Mongoose, Razorpay, Cloudinary, JWT, Vercel"
+                points={[
+                  "Production-ready e-commerce platform with secure authentication and payment integration",
+                  "Dynamic product catalog with search and filtering capabilities",
+                  "JWT-based authentication with protected routes",
+                  "Razorpay payment integration with webhook verification",
+                  "Order management and status tracking system",
+                  "Cloudinary image optimization for product images",
+                  "Learned: Building scalable e-commerce platforms and payment gateway integration"
+                ]}
+              />
+              <ProjectItem
+                name="Facebook Clone"
+                techStack="Next.js, MongoDB, Cloudinary, Tailwind CSS, Node.js, Express.js, JWT"
+                points={[
+                  "Full-stack social media platform with posts, likes, comments, and shares",
+                  "Secure JWT authentication for user login and session management",
+                  "Uses Cloudinary for efficient media storage and handling",
+                  "Learned: Implementing authentication and managing user sessions securely"
+                ]}
+              />
+              <ProjectItem
+                name="URL Shortener"
+                techStack="Next.js, React, Node.js, MongoDB, Tailwind CSS"
+                points={[
+                  "Full-stack app for shortening and managing URLs",
+                  "Users can generate short links and retrieve original URLs",
+                  "Uses local storage and API calls for seamless state management",
+                  "Learned: Efficient API handling and state management"
+                ]}
+              />
+              <ProjectItem
+                name="Music Streaming App"
+                techStack="HTML, CSS, JavaScript"
+                points={[
+                  "Music player with play, pause, seek, and custom audio controls",
+                  "Fully responsive design for smooth playback across devices",
+                  "Learned: Handling JavaScript event listeners for interactive media elements"
+                ]}
+              />
+            </div>
+          </section>
+
+          {/* Education */}
+          <section>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Education</h3>
+            <div className="space-y-1 text-sm text-neutral-700">
+              <div className="font-medium text-neutral-900">Bachelor of Computer Applications (BCA)</div>
+              <div>Institute of Professional Excellence & Management (IPEM College)</div>
+              <div>Ghaziabad, Uttar Pradesh</div>
+            </div>
+          </section>
         </div>
-
-        {/* Skills Section */}
-        <Section title="Skills">
-          <SkillItem title="Language" skills="C++, JavaScript" />
-          <SkillItem
-            title="Frontend"
-            skills="Next.js, React.js, HTML, CSS, Tailwind CSS"
-          />
-          <SkillItem title="Backend" skills="Node.js, Express.js" />
-          <SkillItem title="Database" skills="MongoDB" />
-          <SkillItem title="Development Tools" skills="Git, GitHub" />
-          <SkillItem
-            title="API & Security"
-            skills="REST APIs, JWT Authentication"
-          />
-          <SkillItem title="Computer Science" skills="DSA (Basic), OOPs" />
-        </Section>
-
-        {/* Projects Section */}
-        <Section title="Projects">
-          <ProjectItem
-            name="URL Shortener"
-            techStack="Next.js, React, Node.js, MongoDB, Tailwind CSS"
-            description={[
-              "Full-stack app for shortening and managing URLs.",
-              "Users can generate short links and retrieve original URLs.",
-              "Uses local storage and API calls for seamless state management.",
-            ]}
-            learned="Efficient API handling and state management in a full-stack environment."
-          />
-          <ProjectItem
-            name="Facebook Clone"
-            techStack="Next.js, MongoDB, Cloudinary, Tailwind CSS, Node.js, Express.js, JWT"
-            description={[
-              "Full-stack social media platform where users can create posts, like, comment, and share.",
-              "Secure JWT authentication for user login and session management.",
-              "Uses Cloudinary for efficient media storage and handling.",
-              "Real-time updates and interactive UI enhance user experience.",
-            ]}
-            learned="Implementing authentication and managing user sessions securely."
-          />
-          <ProjectItem
-            name="Music Streaming App"
-            techStack="HTML, CSS, JavaScript"
-            description={[
-              "Music player with play, pause, seek, and custom audio controls.",
-              "Features a fully responsive design for smooth playback across devices.",
-              "Optimized UI/UX for an intuitive and engaging user experience.",
-            ]}
-            learned="Handling JavaScript event listeners for interactive media elements."
-          />
-          <ProjectItem
-            name="Twitter & Netflix Clones"
-            techStack="HTML, CSS, JavaScript"
-            description={[
-              "Frontend clones of Twitter & Netflix with replicated UI and interactions.",
-              "Features a fully responsive design with animations and hover effects.",
-              "Utilizes CSS Grid, Flexbox, and transitions for a pixel-perfect layout.",
-            ]}
-            learned="Advanced CSS techniques for achieving modern UI designs."
-          />
-        </Section>
-
-        {/* Education Section */}
-        <Section title="Education">
-          <ul className="list-disc list-inside font-normal text-gray-700">
-            <li>
-              <span className="text-blue-600">
-                Bachelor of Computer Applications (BCA)
-              </span>
-            </li>
-            <li>
-              <span className="text-blue-600">
-                Institute of Professional Excellence & Management (IPEM
-                College), Ghaziabad, Uttar Pradesh
-              </span>
-            </li>
-          </ul>
-        </Section>
       </div>
-    </motion.div>
+    </div>
   );
-};
-
-// Social Link Component
-const SocialLink = ({ href, icon, borderColor, bgColor }) => (
-  <Link
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={`group flex items-center justify-center w-8 h-8 border-2 ${borderColor} rounded-full overflow-hidden relative`}
-  >
-    <span
-      className={`absolute inset-0 ${bgColor} scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}
-    ></span>
-    <FontAwesomeIcon
-      icon={icon}
-      className="w-4 h-4 text-current group-hover:text-white relative z-10 transition duration-300"
-    />
-  </Link>
-);
-
-// Section Wrapper Component
-const Section = ({ title, children }) => (
-  <div className="px-4 my-6">
-    <h1 className="text-2xl font-bold font-[Lora]">{title}:</h1>
-    <div className="pl-10">{children}</div>
-  </div>
-);
-
-// Skill Item Component
-const SkillItem = ({ title, skills }) => (
-  <li className="text-black">
-    <span className="font-semibold font-[Montserrat]">{title}</span> -{" "}
-    <span className="text-blue-700 font-medium font-[Poppins]">{skills}</span>
-  </li>
-);
+}
 
 // Project Item Component
-const ProjectItem = ({ name, techStack, description, learned }) => (
-  <li className="font-bold text-black mb-4 font-[Lora]">
-    {name} - <span className="text-blue-600">{techStack}</span>
-    <ul className="list-disc list-inside font-normal text-gray-700 font-[Poppins]">
-      {description.map((point, index) => (
-        <li key={index}>{point}</li>
-      ))}
-      <li>
-        <span className="text-blue-600">Learned:</span> {learned}
-      </li>
-    </ul>
-  </li>
-);
-
-export default Page;
+function ProjectItem({ name, techStack, points }) {
+  return (
+    <div className="text-sm">
+      <div className="font-semibold text-neutral-900 mb-1">
+        {name} <span className="text-primary-600">- {techStack}</span>
+      </div>
+      <ul className="list-disc list-inside space-y-1 text-neutral-700 ml-2">
+        {points.map((point, index) => (
+          <li key={index}>{point}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}

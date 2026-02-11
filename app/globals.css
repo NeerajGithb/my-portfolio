@@ -1,65 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Global styles for custom scrollbar */
-/* Global styles for dark custom scrollbar */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* For Webkit Browsers (Chrome, Safari) */
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: #fafafa;
+        color: #171717;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Custom scrollbar - subtle and professional */
 ::-webkit-scrollbar {
-    width: 12px;
-    /* Width of the scrollbar */
-    height: 12px;
-    /* Height of the scrollbar for horizontal scroll */
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #1c1c1c;
-    /* Dark background color of the scrollbar track */
-    border-radius: 8px;
-    /* Rounded corners for the track */
+    background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #4a4a4a;
-    /* Dark gray color for the scrollbar thumb */
-    border-radius: 8px;
-    /* Rounded corners for the thumb */
-    transition: background 0.3s;
-    /* Smooth transition on hover */
+    background: #d4d4d4;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #757575;
-    /* Lighter gray on hover */
+    background: #a3a3a3;
 }
-main{
-    margin-top: 60px;
-}
-@media screen and (max-width: 1279px) {
-    main{
-    margin-top: 80px;
 
+/* Main layout spacing */
+main {
+    margin-top: 64px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-top: 56px;
     }
 }
-
-
-body {
-    background-color: #f8f4e3;
-
-}
-
-.no-margin {
-    min-width: 190% !important;
-    margin-top: 0 !important;
-}
-
-@media screen and (max-width: 410px) {
-    .work{
-        flex-direction: column;
-        gap: 4px;
-    }
-    .link{
-        width: 100%;
-    }
-  }

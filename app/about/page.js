@@ -1,185 +1,140 @@
 "use client";
-import { motion } from "framer-motion";
+
 import Image from "next/image";
-import myImage from "../image/me.jpeg";
+import { Card, Button } from "../components/UI";
+
 export default function About() {
+  const skills = [
+    { name: "JavaScript", description: "Building interactive web applications" },
+    { name: "React.js & Next.js", description: "Efficient and scalable UI components" },
+    { name: "Node.js & Express", description: "Backend services and RESTful APIs" },
+    { name: "MongoDB", description: "NoSQL databases for scalable solutions" },
+    { name: "Tailwind CSS", description: "Modern, responsive UI design" },
+  ];
+
+  const projects = [
+    { name: "Furniture E-Commerce", url: "https://your-furniture-site.vercel.app" },
+    { name: "Facebook Clone", url: "https://facebook-n.vercel.app" },
+    { name: "URL Shortener", url: "https://quick-n.vercel.app" },
+    { name: "Music Streaming App", url: "https://music-n.vercel.app" },
+    { name: "Todo App", url: "#" },
+    { name: "Portfolio Website", url: "https://neerajvishwakarma.vercel.app" },
+  ];
+
   return (
-    <motion.div
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="bg-[#f8f4e3] grid grid-rows px-3 py-10 sm:p-10 sm:pl-[10vw]"
-    >
-      {/* Hero Section */}
-      <div className="flex max-2xl:flex-col gap-5 mb-10">
-        <div className="relative min-w-40 min-h-40 max-w-40 max-h-40 max-lg:ml-10 mb-4 p-6 transform transition-transform hover:scale-105">
-          <Image
-            src={myImage}
-            alt="Neeraj Vishwakarma"
-            layout="fill"
-            className="rounded-full border-4 border-purple-500 object-cover"
-            sizes="(max-width: 640px) 50vw, (max-width: 768px) 40vw, 30vw"
-          />
-        </div>
-        <div className="flex flex-col bg-white p-4 shadow-md rounded-lg">
-          <div>
-            <h1 className="text-4xl font-bold mb-4">About Me</h1>
+    <div className="min-h-screen bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        {/* Hero Section */}
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
+          <div className="lg:col-span-1">
+            <div className="w-48 h-48 relative mx-auto lg:mx-0 rounded-sm overflow-hidden border border-neutral-200">
+              <Image
+                src="/images/me.jpeg"
+                alt="Neeraj Vishwakarma"
+                fill
+                sizes="192px"
+                style={{ objectFit: "cover" }}
+                className="rounded-sm"
+              />
+            </div>
           </div>
-          <div>
-            <p className="text-lg max-w-5xl min-h-40 mx-auto">
-              I&apos;m Neeraj Vishwakarma, a passionate BCA student and
-              full-stack developer. My journey into tech began with a deep
-              curiosity about web technologies, and since then, I have dedicated
-              myself to building scalable, responsive, and efficient
-              applications.
+
+          <div className="lg:col-span-2 space-y-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900">
+              About Me
+            </h1>
+            <p className="text-base text-neutral-700 leading-relaxed">
+              I'm Neeraj Vishwakarma, a passionate BCA student and full-stack developer.
+              My journey into tech began with a deep curiosity about web technologies,
+              and since then, I have dedicated myself to building scalable, responsive,
+              and efficient applications.
             </p>
           </div>
         </div>
-      </div>
 
-      {/* Personal Story */}
-      <div className="grid grid-rows 2xl:ml-44">
-        <section className="mb-10 bg-white p-4 shadow-md rounded-lg max-w-[66rem]">
-          <h2 className="text-3xl font-semibold mb-4">My Journey</h2>
-          <p className="text-lg max-w-2xl mx-auto">
-            My journey started with simple HTML and CSS, evolving into mastering
-            JavaScript, React, and backend technologies like Node.js and
-            MongoDB. Facing real-world challenges helped me refine my
-            problem-solving skills and create impactful projects.
-          </p>
-        </section>
+        {/* Journey Section */}
+        <div className="mb-12">
+          <Card className="p-6 sm:p-8">
+            <h2 className="text-2xl font-semibold text-neutral-900 mb-4">
+              My Journey
+            </h2>
+            <p className="text-base text-neutral-700 leading-relaxed">
+              My journey started with simple HTML and CSS, evolving into mastering
+              JavaScript, React, and backend technologies like Node.js and MongoDB.
+              Facing real-world challenges helped me refine my problem-solving skills
+              and create impactful projects.
+            </p>
+          </Card>
+        </div>
 
-        <section className="mb-10 bg-slate-200 p-4 shadow-lg rounded-lg max-w-[66rem] border border-gray-300">
-          <h2 className="text-4xl font-semibold mb-6 text-center text-gray-800">
+        {/* Skills Section */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-6">
             Skills & Expertise
           </h2>
-          <ul className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <li className="text-center bg-white p-6 shadow-lg hover:shadow-xl rounded-lg transform transition-transform hover:scale-105">
-              <h3 className="font-bold text-lg text-gray-700">JavaScript</h3>
-              <p className="text-gray-600">
-                Expert in building interactive web applications.
-              </p>
-            </li>
-            <li className="text-center bg-white p-6 shadow-lg hover:shadow-xl rounded-lg transform transition-transform hover:scale-105">
-              <h3 className="font-bold text-lg text-gray-700">React.js</h3>
-              <p className="text-gray-600">
-                Building efficient and scalable UI components.
-              </p>
-            </li>
-            <li className="text-center bg-white p-6 shadow-lg hover:shadow-xl rounded-lg transform transition-transform hover:scale-105">
-              <h3 className="font-bold text-lg text-gray-700">
-                Node.js & Express.js
-              </h3>
-              <p className="text-gray-600">
-                Developing backend services and RESTful APIs.
-              </p>
-            </li>
-            <li className="text-center bg-white p-6 shadow-lg hover:shadow-xl rounded-lg transform transition-transform hover:scale-105">
-              <h3 className="font-bold text-lg text-gray-700">MongoDB</h3>
-              <p className="text-gray-600">
-                Working with NoSQL databases for scalable solutions.
-              </p>
-            </li>
-            <li className="text-center bg-white p-6 shadow-lg hover:shadow-xl rounded-lg transform transition-transform hover:scale-105">
-              <h3 className="font-bold text-lg text-gray-700">Tailwind CSS</h3>
-              <p className="text-gray-600">
-                Designing modern, responsive UI components.
-              </p>
-            </li>
-          </ul>
-        </section>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {skills.map((skill, index) => (
+              <Card key={index} className="p-5" hover>
+                <h3 className="text-base font-semibold text-neutral-900 mb-2">
+                  {skill.name}
+                </h3>
+                <p className="text-sm text-neutral-600">
+                  {skill.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-        {/* Values and Philosophy */}
-        <section className="mb-10 bg-white p-4 shadow-md rounded-lg max-w-[66rem]">
-          <h2 className="text-3xl font-semibold mb-4">My Values</h2>
-          <p className="text-lg max-w-2xl mx-auto">
-            I believe in writing clean, maintainable code, focusing on user
-            experience, and continuously learning new technologies to stay ahead
-            in the industry.
-          </p>
-        </section>
+        {/* Values Section */}
+        <div className="mb-12">
+          <Card className="p-6 sm:p-8">
+            <h2 className="text-2xl font-semibold text-neutral-900 mb-4">
+              My Values
+            </h2>
+            <p className="text-base text-neutral-700 leading-relaxed">
+              I believe in writing clean, maintainable code, focusing on user experience,
+              and continuously learning new technologies to stay ahead in the industry.
+            </p>
+          </Card>
+        </div>
 
-        <section className="mb-10 bg-white p-4 shadow-md rounded-lg max-w-[66rem]">
-          <h2 className="text-3xl font-semibold mb-4">Featured Projects</h2>
-          <ul className="flex flex-col items-center space-y-4">
-            <li>
-              <a
-                href="https://quick-n.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Project 1: URL Shortener
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://facebook-n.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Project 2: Full-Stack Facebook Clone
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://x-n.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Project 3: Twitter Frontend Clone
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://netflix-n.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Project 4: Netflix Frontend Clone
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://music-n.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Project 5: Music Streaming App
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://amazon-n.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Project 5: Amazone Frontend Clone
-              </a>
-            </li>
-          </ul>
-        </section>
+        {/* Featured Projects */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-6">
+            Featured Projects
+          </h2>
+          <Card className="p-6 sm:p-8">
+            <div className="grid sm:grid-cols-2 gap-3">
+              {projects.map((project, index) => (
+                <a
+                  key={index}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary-600 hover:text-primary-700 hover:underline"
+                >
+                  {project.name} →
+                </a>
+              ))}
+            </div>
+          </Card>
+        </div>
 
-        {/* Call to Action */}
-        <section className="text-center bg-white p-4 shadow-md rounded-lg max-w-[66rem]">
-          <h2 className="text-3xl font-semibold mb-4">Let’s Connect!</h2>
-          <p className="text-lg mb-4">
-            I would love to collaborate and bring ideas to life. Let’s discuss
+        {/* CTA Section */}
+        <Card className="p-8 text-center">
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-3">
+            Let's Connect!
+          </h2>
+          <p className="text-base text-neutral-700 mb-6 max-w-2xl mx-auto">
+            I would love to collaborate and bring ideas to life. Let's discuss
             how we can work together!
           </p>
-          <a
-            href="/contact"
-            className="bg-purple-500 text-white py-2 px-4 rounded-full hover:bg-purple-600 transition duration-300"
-          >
+          <Button href="/contact" variant="primary">
             Contact Me
-          </a>
-        </section>
+          </Button>
+        </Card>
       </div>
-    </motion.div>
+    </div>
   );
 }

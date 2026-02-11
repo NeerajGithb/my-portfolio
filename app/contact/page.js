@@ -1,108 +1,138 @@
 "use client";
-import { motion } from "framer-motion";
-import React from "react";
-const page = () => {
+
+import { Card } from "../components/UI";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
+
+export default function Contact() {
+  const contactInfo = [
+    {
+      icon: faEnvelope,
+      label: "Email",
+      value: "neerajvishwakarma6484@gmail.com",
+      href: "mailto:neerajvishwakarma6484@gmail.com",
+    },
+    {
+      icon: faPhone,
+      label: "Phone",
+      value: "+91 0000000000",
+      href: "tel:+910000000000",
+    },
+    {
+      icon: faMapMarkerAlt,
+      label: "Location",
+      value: "Delhi 110092",
+      href: null,
+    },
+  ];
+
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: faGithub,
+      href: "https://github.com/NeerajGithb",
+    },
+    {
+      name: "LinkedIn",
+      icon: faLinkedin,
+      href: "https://www.linkedin.com/in/neeraj-vishwakarma-b87592281",
+    },
+    {
+      name: "Twitter",
+      icon: faTwitter,
+      href: "https://x.com/NeerajVish89018",
+    },
+  ];
+
   return (
-    <motion.div
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3 }}
-       className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 py-16 px-3 ">
-      {/* Page Header */}
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="2xl:text-5xl text-4xl font-bold text-gray-800 tracking-wide mb-4">
-          Get in Touch
-        </h1>
-        <p className="text-xl text-gray-600">
-          Feel free to reach out for collaborations, inquiries, or just to say
-          hello!
-        </p>
-      </div>
-      <div className="max-w-4xl mx-auto ">
-        {/*
-        Contact Form 
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-semibold mb-6 text-gray-800">
-            Send a Message
-          </h2>
-          <form>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Name
-              </label>
-              <input
-                className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline"
-                type="text"
-                placeholder="Your Name"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Email
-              </label>
-              <input
-                className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline"
-                type="email"
-                placeholder="Your Email"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Message
-              </label>
-              <textarea
-                className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline"
-                rows="5"
-                placeholder="Your Message"></textarea>
-            </div>
-            <button
-              type="submit"
-              className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-700 focus:outline-none">
-              Send Message
-            </button>
-          </form>
+    <div className="min-h-screen bg-neutral-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+            Get in Touch
+          </h1>
+          <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+            Feel free to reach out for collaborations, inquiries, or just to say hello!
+          </p>
         </div>
-       */}
+
         {/* Contact Information */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-semibold mb-6 text-gray-800">
+        <Card className="p-6 sm:p-8 mb-8">
+          <h2 className="text-xl font-semibold text-neutral-900 mb-6">
             Contact Details
           </h2>
-          <p className="text-lg text-gray-600 mb-4">
-            <strong>Email:</strong> neerajvishwakarma6484.com
-          </p>
-          <p className="text-lg text-gray-600 mb-4">
-            <strong>Phone:</strong> +91 0000000000
-          </p>
-          <p className="text-lg text-gray-600 mb-4">
-            <strong>Location:</strong> Delhi 110092
-          </p>
-          <div className="flex space-x-4 mt-4">
-            {/* Replace "#" with actual social media links */}
-            <a href="#" className="text-gray-500 hover:text-gray-800">
-              <svg
-                className="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                {/* Social media icons here */}
-              </svg>
-            </a>
-            <a href="#" className="text-gray-500 hover:text-gray-800">
-              <svg
-                className="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                {/* Social media icons here */}
-              </svg>
-            </a>
-            {/* Add more social icons as needed */}
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
 
-export default page;
+          <div className="space-y-4 mb-8">
+            {contactInfo.map((item, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="w-10 h-10 flex items-center justify-center rounded-sm bg-primary-100 text-primary-600">
+                  <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm font-medium text-neutral-900 mb-1">
+                    {item.label}
+                  </div>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="text-sm text-neutral-600 hover:text-primary-600 transition-colors"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <div className="text-sm text-neutral-600">{item.value}</div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Social Links */}
+          <div>
+            <h3 className="text-base font-semibold text-neutral-900 mb-4">
+              Connect on Social Media
+            </h3>
+            <div className="flex space-x-3">
+              {socialLinks.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-sm border border-neutral-300 bg-white hover:bg-neutral-50 transition-colors group"
+                  aria-label={social.name}
+                >
+                  <FontAwesomeIcon
+                    icon={social.icon}
+                    className="w-5 h-5 text-neutral-700"
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Card>
+
+        {/* Optional: CTA Card */}
+        <Card className="p-6 sm:p-8 text-center bg-primary-50 border-primary-200">
+          <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+            Available for Opportunities
+          </h3>
+          <p className="text-sm text-neutral-600">
+            I'm currently open to full-time positions and freelance projects.
+          </p>
+        </Card>
+      </div>
+    </div>
+  );
+}
