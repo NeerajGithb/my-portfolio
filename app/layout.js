@@ -1,11 +1,12 @@
 import "./globals.css";
-import Script from "next/script";
-import ClientLayout from "./client-layout";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ClientWrapper from "./components/ClientWrapper";
 
 export const metadata = {
-  title: "Neeraj Vishwakarma | Full-Stack Developer Portfolio",
+  title: "Neeraj Vishwakarma | Full-Stack Developer",
   description:
-    "Explore the projects, skills, and experiences of Neeraj Vishwakarma, a passionate full-stack developer.",
+    "Full-Stack Developer building AI-powered products across the stack, from API design and backend systems to LLM orchestration and cloud infrastructure.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -13,34 +14,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <meta name="google-site-verification" content="uA_ZvglMblmtmqwvLpdZ-6PXkum5YnBBBI_X3Lac9Nw" />
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XCPTZ3JRDJ"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XCPTZ3JRDJ', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-      </head>
-      <body>
-        {/* Auto Ads Script */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3077714211582326"
-          crossOrigin="anonymous"
-        ></script>
-        <ClientLayout>{children}</ClientLayout>
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-neutral-50 text-neutral-900 antialiased selection:bg-brand-100 selection:text-brand-900">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-neutral-950 focus:text-white focus:rounded-sm shadow-xl text-sm font-medium"
+        >
+          Skip to content
+        </a>
+        
+        <ClientWrapper>
+          <Navbar />
+          <main id="main-content" className="pt-16">
+            {children}
+          </main>
+          <Footer />
+        </ClientWrapper>
       </body>
     </html>
   );
 }
+

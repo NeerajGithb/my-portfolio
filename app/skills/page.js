@@ -1,77 +1,137 @@
-"use client";
+import Link from "next/link";
+import { Card, TechPill, SectionHeader, Button } from "../components/UI";
 
-import { Card } from "../components/UI";
+export const metadata = {
+  title: "Technical Skills & Competencies | Neeraj Vishwakarma",
+  description:
+    "Production technical skills and engineering domains utilized across ResuPulse and Furniture platforms by Full-Stack Developer Neeraj Vishwakarma.",
+};
 
 export default function Skills() {
-  const skills = [
+  const skillCategories = [
     {
-      name: "Data Structures & Algorithms",
-      level: "Intermediate",
-      desc: "Problem-solving skills for writing optimized and efficient code"
+      category: "Languages",
+      techs: ["TypeScript", "JavaScript (ES6+)", "Python"],
+      context:
+        "Primary development in strictly-typed TypeScript across client, server, and worker layers. Python utilized for secondary scripting, benchmarks, and data analysis.",
     },
     {
-      name: "JavaScript",
-      level: "Advanced",
-      desc: "Expert in building interactive web applications using modern JavaScript"
+      category: "Frontend Engineering",
+      techs: ["Next.js (App Router)", "React 18", "Tailwind CSS", "Zustand", "TanStack Query"],
+      context:
+        "Building responsive, high-performance interfaces with Server Components (RSC), decoupled client state (Zustand), and reactive server cache synchronization (TanStack Query).",
     },
     {
-      name: "React.js & Next.js",
-      level: "Advanced",
-      desc: "Building dynamic, efficient, and reusable UI components for scalable applications"
+      category: "Backend & Queuing",
+      techs: ["Node.js", "Express.js", "REST APIs", "BullMQ", "Zod", "Razorpay"],
+      context:
+        "Developing high-throughput REST APIs, asynchronous worker priority lanes, runtime input validation with Zod schemas, and transactional payment workflows.",
     },
     {
-      name: "Node.js & Express.js",
-      level: "Advanced",
-      desc: "Developing scalable server-side applications and RESTful APIs"
+      category: "Databases & In-Memory Caching",
+      techs: ["MongoDB", "Mongoose", "Redis", "AWS ElastiCache", "Upstash"],
+      context:
+        "Multi-document ACID transaction sessions, complex compound indexing, in-memory queue broker management, and non-blocking cursor-based SCAN cache invalidation.",
     },
     {
-      name: "MongoDB",
-      level: "Intermediate",
-      desc: "NoSQL database for building modern applications with flexible data schemas"
+      category: "AI & LLM Orchestration",
+      techs: [
+        "Groq AI",
+        "Multi-Agent Orchestration",
+        "Tool Calling",
+        "Structured Outputs (Zod)",
+        "Prompt Engineering",
+        "SSE Streaming",
+        "PII Redaction",
+      ],
+      context:
+        "Orchestrating 8 parallel specialist LLM agents with pre-inference structural PII anonymization, deterministic fact grounding, and sub-5s real-time SSE progress streaming.",
     },
     {
-      name: "Tailwind CSS",
-      level: "Advanced",
-      desc: "Utility-first CSS framework for crafting beautiful user interfaces efficiently"
+      category: "Cloud, Infrastructure & DevOps",
+      techs: [
+        "AWS EC2",
+        "AWS S3",
+        "AWS ElastiCache",
+        "Cloudflare",
+        "Docker",
+        "Nginx",
+        "PM2",
+        "CI/CD (GitHub Actions)",
+      ],
+      context:
+        "Deploying standalone Next.js builds on AWS EC2 (Mumbai) with PM2 zero-downtime rolling reloads, Cloudflare edge proxies, and automated GitHub Actions verification workflows.",
     },
     {
-      name: "Git & GitHub",
-      level: "Advanced",
-      desc: "Version control, branching strategies, and collaborative development"
+      category: "Security & Access Control",
+      techs: ["OAuth 2.0", "JWT", "RBAC", "bcrypt", "CSRF Protection", "HMAC-SHA256"],
+      context:
+        "Dual-plane auth systems, role-based access control, cryptographic HMAC webhook signature verification, and server-side blanked entitlement projections.",
+    },
+    {
+      category: "Testing, Tools & Tooling",
+      techs: ["Vitest", "Postman", "Sentry", "Git", "GitHub"],
+      context:
+        "Comprehensive unit and integration test suites with Vitest, API contract verification via Postman, production error telemetry via Sentry, and git branching hygiene.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div className="min-h-screen bg-neutral-50 py-12 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
-            Skills & Expertise
+        <div className="mb-12 max-w-3xl">
+          <div className="text-xs font-mono font-bold uppercase tracking-wider text-brand-600 mb-2">
+            EXPERTISE &bull; PRODUCTION TAXONOMY
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-950 mb-3">
+            Technical Skills &amp; Stack Receipts
           </h1>
-          <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-            A showcase of the technologies and tools I use to create modern,
-            responsive, and scalable applications.
+          <p className="text-base text-neutral-600 leading-relaxed">
+            Every technology listed below represents practical, production-tested implementation
+            backed by real systems code in ResuPulse or Furniture E-Commerce.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
-            <Card key={index} className="p-6" hover>
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-lg font-semibold text-neutral-900">
-                  {skill.name}
+        <div className="grid md:grid-cols-2 gap-6">
+          {skillCategories.map((group) => (
+            <Card key={group.category} className="p-6 sm:p-7 hover:border-neutral-300 transition-colors bg-white">
+              <div className="flex items-baseline justify-between border-b border-neutral-100 pb-2 mb-3">
+                <h3 className="text-base font-bold text-neutral-950 tracking-tight">
+                  {group.category}
                 </h3>
-                <span className="px-2.5 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded">
-                  {skill.level}
+                <span className="text-[11px] font-mono text-neutral-500">
+                  {group.techs.length} technologies
                 </span>
               </div>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                {skill.desc}
+
+              <p className="text-xs text-neutral-600 leading-relaxed mb-4">
+                {group.context}
               </p>
+
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {group.techs.map((tech) => (
+                  <TechPill key={tech} variant="mono">
+                    {tech}
+                  </TechPill>
+                ))}
+              </div>
             </Card>
           ))}
+        </div>
+
+        {/* System Implementation Proof Link */}
+        <div className="mt-14 p-6 sm:p-8 bg-neutral-900 text-white rounded-sm border border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1 max-w-xl">
+            <h4 className="text-base font-bold">Looking to see these skills in action?</h4>
+            <p className="text-xs text-neutral-400">
+              Read the ResuPulse architectural breakdown to observe how BullMQ, Redis, Groq multi-agent orchestration, and AWS EC2 operate in production.
+            </p>
+          </div>
+          <Button href="/projects/resupulse" variant="brand" size="md" className="whitespace-nowrap">
+            View Architecture Case Study →
+          </Button>
         </div>
       </div>
     </div>

@@ -1,137 +1,174 @@
-"use client";
-
-import { Card } from "../components/UI";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faPhone,
-  faMapMarkerAlt
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import { Card, TechPill, Button, SectionHeader } from "../components/UI";
+
+export const metadata = {
+  title: "Contact & Hiring | Neeraj Vishwakarma",
+  description:
+    "Get in touch with Neeraj Vishwakarma, Full-Stack Developer building AI-powered products, for engineering roles and collaborations.",
+};
 
 export default function Contact() {
-  const contactInfo = [
+  const contactDetails = [
     {
-      icon: faEnvelope,
-      label: "Email",
-      value: "neerajvishwakarma6484@gmail.com",
-      href: "mailto:neerajvishwakarma6484@gmail.com",
+      label: "Direct Email",
+      value: "neerajvishwakarma726689@gmail.com",
+      href: "mailto:neerajvishwakarma726689@gmail.com",
+      description: "Best channel for job opportunities, inquiries, and technical discussion.",
+      actionLabel: "Send Email",
     },
     {
-      icon: faPhone,
-      label: "Phone",
-      value: "+91 0000000000",
-      href: "tel:+910000000000",
+      label: "Phone / WhatsApp",
+      value: "+91 8287168307",
+      href: "tel:+918287168307",
+      description: "Available during standard business hours (IST / UTC+5:30).",
+      actionLabel: "Call Directly",
     },
     {
-      icon: faMapMarkerAlt,
       label: "Location",
-      value: "Delhi 110092",
+      value: "Delhi NCR, India",
       href: null,
+      description: "Open to local on-site, hybrid, and worldwide remote opportunities.",
+      actionLabel: null,
     },
   ];
 
-  const socialLinks = [
+  const onlineProfiles = [
     {
-      name: "GitHub",
-      icon: faGithub,
-      href: "https://github.com/NeerajGithb",
+      platform: "GitHub",
+      handle: "@NeerajGithb",
+      url: "https://github.com/NeerajGithb",
+      description: "Public repositories, open-source code, and ResuPulse engineering showcase.",
     },
     {
-      name: "LinkedIn",
-      icon: faLinkedin,
-      href: "https://www.linkedin.com/in/neeraj-vishwakarma-b87592281",
+      platform: "LinkedIn",
+      handle: "neerajv07",
+      url: "https://www.linkedin.com/in/neerajv07/",
+      description: "Professional background, verified credentials, and networking.",
     },
     {
-      name: "Twitter",
-      icon: faTwitter,
-      href: "https://x.com/NeerajVish89018",
+      platform: "LeetCode",
+      handle: "NeerajOnLeet",
+      url: "https://leetcode.com/NeerajOnLeet",
+      description: "Algorithmic problem solving, data structures, and contest history.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div className="min-h-screen bg-neutral-50 py-12 sm:py-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+        <div className="space-y-3">
+          <div className="text-xs font-mono font-bold uppercase tracking-wider text-brand-600">
+            CONNECT &bull; HIRING INQUIRIES
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-950">
             Get in Touch
           </h1>
-          <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-            Feel free to reach out for collaborations, inquiries, or just to say hello!
+          <p className="text-base text-neutral-600 leading-relaxed max-w-2xl">
+            I am actively looking for Full-Stack Developer and AI Systems Engineering roles.
+            Whether you have an open position, an engineering question about ResuPulse, or an interesting problem to solve, feel free to reach out.
           </p>
         </div>
 
-        {/* Contact Information */}
-        <Card className="p-6 sm:p-8 mb-8">
-          <h2 className="text-xl font-semibold text-neutral-900 mb-6">
-            Contact Details
+        {/* Availability Banner */}
+        <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-sm flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs sm:text-sm font-medium text-emerald-900">
+              Active Status: Open for full-time engineering roles (Remote &bull; Hybrid &bull; On-site)
+            </span>
+          </div>
+          <div className="text-xs font-mono text-emerald-700 hidden sm:block">
+            IST (UTC+5:30)
+          </div>
+        </div>
+
+        {/* Contact Channels Grid */}
+        <div className="space-y-4">
+          <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-900">
+            Direct Communication Channels
           </h2>
 
-          <div className="space-y-4 mb-8">
-            {contactInfo.map((item, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="w-10 h-10 flex items-center justify-center rounded-sm bg-primary-100 text-primary-600">
-                  <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
+          <div className="grid sm:grid-cols-2 gap-4">
+            {contactDetails.map((item) => (
+              <Card key={item.label} className="p-6 bg-white hover:border-neutral-300 transition-colors">
+                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500 mb-1">
+                  {item.label}
                 </div>
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-neutral-900 mb-1">
-                    {item.label}
-                  </div>
+                <div className="text-base font-bold text-neutral-950 mb-1">
                   {item.href ? (
-                    <a
-                      href={item.href}
-                      className="text-sm text-neutral-600 hover:text-primary-600 transition-colors"
-                    >
+                    <a href={item.href} className="hover:text-brand-600 transition-colors">
                       {item.value}
                     </a>
                   ) : (
-                    <div className="text-sm text-neutral-600">{item.value}</div>
+                    item.value
                   )}
                 </div>
-              </div>
+                <p className="text-xs text-neutral-600 leading-relaxed mb-4">
+                  {item.description}
+                </p>
+                {item.href && (
+                  <a
+                    href={item.href}
+                    className="text-xs font-mono font-semibold text-brand-600 hover:text-brand-700 transition-colors inline-flex items-center gap-1"
+                  >
+                    {item.actionLabel} &rarr;
+                  </a>
+                )}
+              </Card>
             ))}
           </div>
+        </div>
 
-          {/* Social Links */}
-          <div>
-            <h3 className="text-base font-semibold text-neutral-900 mb-4">
-              Connect on Social Media
-            </h3>
-            <div className="flex space-x-3">
-              {socialLinks.map((social, index) => (
-                <Link
-                  key={index}
-                  href={social.href}
+        {/* Online Profiles */}
+        <div className="space-y-4">
+          <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-900">
+            Professional &amp; Code Profiles
+          </h2>
+
+          <div className="grid sm:grid-cols-3 gap-4">
+            {onlineProfiles.map((profile) => (
+              <Card key={profile.platform} className="p-5 bg-white hover:border-neutral-300 transition-colors">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-sm font-bold text-neutral-950">
+                    {profile.platform}
+                  </span>
+                  <span className="text-xs text-neutral-400 font-mono">↗</span>
+                </div>
+                <div className="text-xs font-mono text-brand-600 mb-2">
+                  {profile.handle}
+                </div>
+                <p className="text-xs text-neutral-600 leading-relaxed mb-4">
+                  {profile.description}
+                </p>
+                <a
+                  href={profile.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-sm border border-neutral-300 bg-white hover:bg-neutral-50 transition-colors group"
-                  aria-label={social.name}
+                  className="text-xs font-mono font-semibold text-neutral-900 hover:text-brand-600 transition-colors"
                 >
-                  <FontAwesomeIcon
-                    icon={social.icon}
-                    className="w-5 h-5 text-neutral-700"
-                  />
-                </Link>
-              ))}
-            </div>
+                  Visit Profile &rarr;
+                </a>
+              </Card>
+            ))}
           </div>
-        </Card>
+        </div>
 
-        {/* Optional: CTA Card */}
-        <Card className="p-6 sm:p-8 text-center bg-primary-50 border-primary-200">
-          <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-            Available for Opportunities
-          </h3>
-          <p className="text-sm text-neutral-600">
-            I&apos;m currently open to full-time positions and freelance projects.
-          </p>
-        </Card>
+        {/* Direct Action Card */}
+        <div className="p-6 sm:p-8 bg-neutral-950 text-white rounded-sm border border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1 max-w-md">
+            <h3 className="text-base font-bold">Need a copy of my resume?</h3>
+            <p className="text-xs text-neutral-400">
+              Download the 1-page A4 PDF synchronized with my latest verified production metrics and skills.
+            </p>
+          </div>
+          <Button href="/resume" variant="brand" size="md" className="whitespace-nowrap">
+            View / Print Resume →
+          </Button>
+        </div>
       </div>
     </div>
   );

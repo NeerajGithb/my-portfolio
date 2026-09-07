@@ -2,11 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Loader from "./lib/Loder";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Loader from "../lib/Loder";
 
-export default function ClientLayout({ children }) {
+export default function ClientWrapper({ children }) {
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
 
@@ -20,18 +18,10 @@ export default function ClientLayout({ children }) {
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  const isResumePage = pathname === "/resume";
-
   return (
     <>
       {loading && <Loader />}
-      {!isResumePage && <Navbar />}
-
-      <main className={isResumePage ? "no-margin" : ""}>
-        {children}
-      </main>
-
-      {!isResumePage && <Footer />}
+      {children}
     </>
   );
 }
